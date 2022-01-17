@@ -3,10 +3,11 @@
 const User = require("../../models/User")
 
 const output = {
-    hello : (req,res)=>{
+    home: (req,res)=>{
         res.render("home/index");
     },
-    login : (req,res)=>{
+
+    login: (req,res)=>{
         res.render("home/login");
     }
 }
@@ -18,7 +19,7 @@ const process={
         const user = new User(req.body);
         const response = user.login();
         return res.json(response);
-        
+
         // return res.json(response);
         // const id = req.body.id,
         // psword = req.body.psword;
@@ -43,5 +44,4 @@ const process={
 module.exports = {
     output,
     process,
-    users,
 }
