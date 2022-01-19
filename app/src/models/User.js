@@ -24,6 +24,11 @@ class User{
         }
         
     }
+
+    register(){
+        const client = this.body;
+        UserStorage.save(client);
+    }
 }
 
 module.exports = User;

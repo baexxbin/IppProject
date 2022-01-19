@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/home/register.css">
+    <script src="/js/home/register.js" defer></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="input-form-backgroud row">
+            <div class="input-form col-md-12 mx-auto">
+                <h4 class="mb-3">회사정보</h4>
+                <form class="validation-form" novalidate>
+                    <div class="row">
+                        <div class="col-md-6 mb-3"> <label for="business">사업자명</label> <input type="text"
+                                class="form-control" id="business" placeholder="" value="" required>
+                        </div>
+                        <div class="col-md-6 mb-3"> <label for="businessNum">사업자 번호</label> <input type="text"
+                                class="form-control" id="businessNum" placeholder="" value="" required>
+                        </div>
+                    </div>
+                    <div class="mb-3"> <label for="rep">대표자명<input type="text" class="form-control"
+                        id="rep" placeholder="" required></label> 
+                    </div>
+
+                    <div class="mb-3"> <label for="status">업태</label> <input type="text" class="form-control" id="status" required>
+                    </div>
+
+                    <div class="mb-3"><label for="event">종목</label><input type="text" class="form-control" id="event"  required>
+                    </div>
+                    <div class="mb-3"> <label for="class">분류</label> 
+                        <select class="form-control" id="class">
+                            <option>해외</option>
+                            <option>수도권</option>
+                            <option>영남권</option>
+                            <option>중부권</option>
+                            <option>호남권</option>
+                        </select>
+                    </div>
+                    <div class="mb-3"><label for="area">지역</label> 
+                        <select class="form-control" id="area">
+                            <option>서울</option>
+                            <option>경기</option>
+                            <option>부산</option>
+                            <option>경상</option>
+                            <option>충청</option>
+                            <option>전라</option>
+                            <option>강원</option>
+                            <option>제주</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3"> <label for="address">주소</label>  <input type="text" class="form-control" id="address" required>
+                    </div>
+                    <div class="mb-3"><label for="repNum">대표번호</label> <input type="text" class="form-control"
+                            id="repNum" required>
+                    </div>
+                    <div class="mb-3"><label for="repFax">대표팩스</label>  <input type="text" class="form-control"
+                          id="repFax" placeholder="팩스번호" required>
+                    </div>
+                    <div class="mb-3"><label for="nature">특성</label> 
+                        <select class="form-control" id="nature">
+                            <option>전체</option>
+                            <option>내마모</option>
+                            <option>내충격</option>
+                            <option>절삭</option>
+                            <option>정밀금형</option>
+                        </select>
+                    </div>
+                    <div class="mb-3"><label for="field">분야</label> 
+                        <select class="form-control" id="field">
+                            <option>전체</option>
+                            <option>철강</option>
+                            <option>자동차</option>
+                            <option>기계</option>
+                            <option>반도체</option>
+                        </select>
+                    </div><br>
+                    <h4 class="mb-3">세금 계산서</h4>
+                    <div class="mb-3"><label for="tax-manager">담당자</label>  <input type="text" class="form-control"
+                           id="tax-manager" placeholder="세금계산서 담당자명" required>
+                    </div>
+                    <div class="mb-3"><label for="tax-managerNum">담당자 번호</label>  <input type="text" class="form-control"
+                           id="tax-managerNum" placeholder="세금계산서 담당자 번호" required>
+                    </div>
+                    <div class="mb-3"><label for="tax-managerFax">담당자 FAX</label>  <input type="text" class="form-control"
+                         id="tax-managerFax" placeholder="세금계산서 담당자 FAX" required>
+                    </div>
+                    <div class="mb-3"><label for="tax-managerMail">담당자 메일</label>  <input type="text" class="form-control"
+                           id="tax-managerMail" placeholder="세금계산서 담장자 메일" required>
+                    </div><br>
+
+                    <h4 class="mb-3">거래 담장자</h4>
+                    <div class="mb-3"><label for="manager">담당자</label>  <input type="text" class="form-control" id="manager"
+                             required>
+                    </div>
+                    <div class="mb-3"><label for="department">소속부서</label>  <input type="text" class="form-control" id="department"
+                            required>
+                    </div>
+                    <div class="mb-3"><label for="position">직책</label> <input type="text" class="form-control" id="position"
+                             required>
+                    </div>
+                    <div class="mb-3"><label for="id">회원아이디</label> <input type="text" class="form-control"
+                            id="id" required>
+                    </div>
+                    <div class="mb-3"><label for="psword">비밀번호</label>  <input type="password" class="form-control"
+                           id="psword" required>
+                    </div>
+                    <div class="mb-3"><label for="confirm-psword">비밀번호 확인</label>  <input type="password" class="form-control"
+                        id="confirm-psword" required>
+                    </div>
+                    <div class="mb-3"><label for="managerNum">담당자 번호</label>  <input type="text" class="form-control" id="managerNum"
+                             required>
+                    </div>
+                    <div class="mb-3"><label for="managerFax">담당자 FAX</label>   <input type="text" class="form-control" id="managerFax"
+                             required>
+                    </div>
+                    <div class="mb-3"><label for="managerEmail">담당자 메일</label>   <input type="text" class="form-control" id="managerEmail"
+                             required>
+                    </div>
+                    <div class="mb-3"><label for="delivery">납품 주소</label>  <input type="text" class="form-control" id="delivery"
+                            required>
+                    </div>
+
+                    <div class="mb-4"></div> <p class="btn btn-primary btn-lg btn-block" id="button" type="submit">회원가입</p>
+                    <p class="message">Alrady registered? <a href="./login">Create an account</a></p>
+                </form>
+            </div>
+        </div>
+        </form>
+    </div>
+    </div>
+</body>
+</html>
