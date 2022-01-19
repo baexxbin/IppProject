@@ -24,29 +24,11 @@ const process={
         const user = new User(req.body);
         const response = await user.login();
         return res.json(response);
-
-        // return res.json(response);
-        // const id = req.body.id,
-        // psword = req.body.psword;
-
-        // console.log(UserStorage.getUsers("id", "psword"));
-
-        // const response = {};
-        // if(users.id.includes(id)){
-        //    const idx = users.id.indexOf(id);
-        //    if(users.psword[idx] === psword){
-        //        response.success = true;
-        //        return res.json(response);
-        //    }
-        // }
-
-        // response.success = false;
-        // response.msg = "로그인 실패"
-        // return res.json(response);
     },
-    register: (req, res) =>{
+
+    register: async (req, res) =>{
         const user = new User(req.body);
-        const response = user.register();
+        const response = await user.register();
         return res.json(response);
     }
 }
@@ -55,3 +37,7 @@ module.exports = {
     output,
     process,
 }
+
+// 브라우저에서 전달한 데이터를 가지고있는 유저
+// 유저가 로그인 기능을 처리하고 어떤 응답을 받아서
+// 이 응답을 컨트롤러가 res.json으로 처리 : json응답 전송

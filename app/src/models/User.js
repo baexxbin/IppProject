@@ -11,6 +11,7 @@ class User{
         const client = this.body;
         try{
             const {id, psword} = await UserStorage.getUserInfo(client.id);
+            console.log(id,psword);
         
             if(id){
                 if(id===client.id && psword === client.psword){
@@ -25,9 +26,15 @@ class User{
         
     }
 
-    register(){
+    async register(){
         const client = this.body;
-        UserStorage.save(client);
+        try{
+           const response = await UserStorage.save(client);
+           return response;
+        } catch(err){
+            return {success: false, msg:err };
+        }
+        
     }
 }
 
