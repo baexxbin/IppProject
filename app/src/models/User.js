@@ -10,12 +10,24 @@ class User{
     async login(){
         const client = this.body;
         try{
-            const {id, psword} = await UserStorage.getUserInfo(client.id);
-            console.log(id,psword);
+            // const users = {id, business, managerNum, managerFax, managerEmail, manager} = await UserStorage.getUserInfo(client.id);
+
+            const {id, psword,business, managerNum, managerFax, managerEmail, manager} = await UserStorage.getUserInfo(client.id);
+            // console.log(id,psword,business, managerNum, managerFax, managerEmail, manager);
         
             if(id){
                 if(id===client.id && psword === client.psword){
-                    return {success: true};
+                    // console.log("확인");
+                
+                    return {
+                        success: true,
+                        id: id,
+                        buyer: business,
+                        call: managerNum,
+                        fax: managerFax,
+                        mail: managerEmail,
+                        head: manager
+                    };
                 }
                 return {success: false, msg: "비밀번호가 틀렸습니다."};
             }
