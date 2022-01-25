@@ -3,13 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/home/info.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-    User
-    <p><%= data.user %></p>
-    <p><%= data.buyer %></p>
+    <div>
+        <h4><%= data.user%>님 안녕하세요</h4>
+    </div>
+    <div class="table">
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">기본정보</th>
+                <th scope="col">내용</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">발주처</th>
+                <td><%= data.buyer %></td>
+              </tr>
+              <tr>
+                <th scope="row">전화</th>
+                <td><%= data.call %></td>
+              </tr>
+              <tr>
+                <th scope="row">팩스</th>
+                <td><%= data.fax %></td>
+              </tr>
+              <tr>
+                <th scope="row">메일</th>
+                <td><%= data.mail %></td>
+              </tr>
+              <tr>
+                <th scope="row">담당</th>
+                <td><%= data.head %></td>
+              </tr>
+              <tr>
+                <th scope="row">발주일자</th>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
     
 
 </body>

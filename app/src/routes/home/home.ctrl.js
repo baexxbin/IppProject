@@ -1,7 +1,7 @@
 // "use strict";
 
 const { response } = require("express");
-const User = require("../../models/User")
+const User = require("../../models/User");
 
 const output = {
     home: (req,res)=>{
@@ -11,19 +11,20 @@ const output = {
     login: (req,res)=>{
         if(req.session.is_logined){
             console.log("login세션있");
-            console.log(req.session);
-            res.render("home/info",{data : req.session});
+            res.redirect("/info");
+            // res.render("home/info",{data : req.session});
         }else{
             res.render("home/login");
         }
     },
 
     register: (req,res) =>{
-        res.render("home/register")
+        res.render("home/register");
     },
 
     // 세션정보 res로 js에 넘겨주기
     info: (req,res) =>{
+        console.log("데이터");
         if(req.session.is_logined){
             console.log("is data");
             var status = req.session;
