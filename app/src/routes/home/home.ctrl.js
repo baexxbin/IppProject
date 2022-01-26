@@ -24,7 +24,7 @@ const output = {
     // 세션정보 res로 js에 넘겨주기
     info: (req,res) =>{
         console.log("info세션",req.session.user);
-        const user = new User(req.session);
+        // const user = new User(req.session);
         // const response = user.info();
         res.render("home/info",{
             isDate : false,
@@ -73,8 +73,12 @@ const process={
     info: async (req,res)=>{
         const user = new User(req.session);
         const response = await user.info(); // 기본정보
+        console.log("db정보 읽어오나 ",response);  
+        console.log("세션정보", req.session.user); 
+
         console.log("info POST",req.body);  // 날짜정보
-        // console.log(response);
+        
+        console.log(req.session);
         console.log(req.session.user);
         console.log(req.body.isbtnOn);
         if(req.body.isbtnOn){

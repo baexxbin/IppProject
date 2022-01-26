@@ -13,9 +13,7 @@
 <body>
   isData: <%= isDate %>
     <div>
-      <% if(isDate){ %>
         <h4><%= data.user%>님 안녕하세요</h4>
-     <% } %>
         
     </div>
 
@@ -52,11 +50,11 @@
                 <th scope="row">담당</th>
                 <td><%= data.head %></td>
               </tr>
-              <tr>
-                <th scope="row">발주일자</th>
-                <% if(isDate){ %>
+              <tr id="dateTR">
+                <th scope="row" id="orderDate">발주일자</th>
+                <!-- <% if(isDate){ %> -->
                 <td><%= dateData.date %></td>
-                <% } %>
+                <!-- <% } %> -->
               </tr>
             </tbody>
           </table>

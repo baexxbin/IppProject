@@ -1,6 +1,9 @@
 "user strict";
 
+const orderDate = document.getElementById("orderDate");
+const dateTR = document.getElementById("dateTR");
 const btn = document.querySelector("#button");
+var cnt=0;
 
 btn.addEventListener("click", load);
 
@@ -30,7 +33,15 @@ function load(){
         console.log(res.dateData.date);
         console.log(res.data.user);
         console.log(res.data.buyer);
-        console.log(res.success)
+        console.log(res.success);
+
+        if(cnt<1){
+            var dateTD = document.createElement("td");
+            dateTD.innerHTML = res.dateData.date;
+            dateTR.appendChild(dateTD);
+            cnt++;
+        }
+        
         console.log("정보불러오기 성공");
     })
     .catch((err) =>{

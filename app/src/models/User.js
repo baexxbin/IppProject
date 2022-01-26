@@ -51,6 +51,7 @@ class User{
 
     async info(){
         const client = this.body;
+        console.log(client);
         try{
             const response = {id, psword, business, managerNum, managerFax, managerEmail, manager} = await UserStorage.getUserInfo(client.id);
             return response;
