@@ -7,13 +7,23 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/home/info.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/js/home/info.js" defer></script>
     <title>Document</title>
 </head>
 <body>
+  isData: <%= isDate %>
     <div>
+      <% if(isDate){ %>
         <h4><%= data.user%>님 안녕하세요</h4>
+     <% } %>
+        
     </div>
+
+    
     <div class="table">
+        <div class="btn-group" role="group" aria-label="Third group">
+            <button class="btn btn-secondary" id="button">정보불러오기</button>
+        </div>
         <table class="table table-striped">
             <thead>
               <tr>
@@ -44,7 +54,9 @@
               </tr>
               <tr>
                 <th scope="row">발주일자</th>
-                <td></td>
+                <% if(isDate){ %>
+                <td><%= dateData.date %></td>
+                <% } %>
               </tr>
             </tbody>
           </table>

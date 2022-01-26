@@ -10,7 +10,6 @@ const output = {
 
     login: (req,res)=>{
         if(req.session.is_logined){
-            console.log("login세션있");
             res.redirect("/info");
             // res.render("home/info",{data : req.session});
         }else{
@@ -19,20 +18,29 @@ const output = {
     },
 
     register: (req,res) =>{
-        res.render("home/register");
+        res.redirect("home/register");
     },
 
     // 세션정보 res로 js에 넘겨주기
     info: (req,res) =>{
-        console.log("데이터");
-        if(req.session.is_logined){
-            console.log("is data");
-            var status = req.session;
-            console.log('data상태',status);
-            res.render("home/info", {data : req.session});
-            console.log(data);
-        }
-        res.render("home/info");
+        console.log("info세션",req.session.user);
+        const user = new User(req.session);
+        // const response = user.info();
+        res.render("home/info",{
+            isDate : false,
+            data : req.session
+        });
+
+        // return res.json(response);
+
+        // 세션이용 정보출력
+        // if(req.session.is_logined){
+        //     console.log("is data");
+        //     var status = req.session;
+        //     res.render("home/info", {data : req.session});
+        // }
+        // res.render("home/info");
+        // console.log(req.session.User);
     }
 
 }
@@ -42,7 +50,7 @@ const process={
     login: async (req,res)=>{
         const user = new User(req.body);
         const response = await user.login();
-        console.log('응답: ', response);
+        // console.log('응답: ', response);
         if(response.success === true){  // 세션정보로 저장
             req.session.is_logined = true;
             req.session.user = response.id;
@@ -51,14 +59,9 @@ const process={
             req.session.fax = response.fax;
             req.session.mail = response.mail;
             req.session.head = response.head;
-            res.render("home/info",{response});
-            console.log("response", response);
+            // res.render("home/info",{response});
+            res.redirect("/info");
         }
-        // if(req.session.is_logined){
-        //     res.render("home/info",{data:response});
-        //     console.log("response", response);
-        // }
-        // return res.json(response);
     },
 
     register: async (req, res) =>{
@@ -67,8 +70,36 @@ const process={
         return res.json(response);
     },
 
-    info: (req,res)=>{
-        console.log(req.session)
+    info: async (req,res)=>{
+        const user = new User(req.session);
+        const response = await user.info(); // 기본정보
+        console.log("info POST",req.body);  // 날짜정보
+        // console.log(response);
+        console.log(req.session.user);
+        console.log(req.body.isbtnOn);
+        if(req.body.isbtnOn){
+            console.log("들어옴");
+            return res.json({
+                success : true,
+                data : req.session,
+                dateData : req.body 
+            })
+            // res.render("home/info",{
+            //     isDate : true,
+            //     data : req.session,
+            //     dateData : req.body
+            // });
+            // return res.json({
+            //     success : true,
+            // });
+        }
+        // return res.json({
+        //     success : false,
+        //     msg : "불러오기 실패",
+        // })
+
+
+        // return res.json(response);
     }
 }
 

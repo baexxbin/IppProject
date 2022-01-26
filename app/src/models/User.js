@@ -48,6 +48,17 @@ class User{
         }
         
     }
+
+    async info(){
+        const client = this.body;
+        try{
+            const response = {id, psword, business, managerNum, managerFax, managerEmail, manager} = await UserStorage.getUserInfo(client.id);
+            return response;
+        } catch(err){
+            return {success: false, msg:err };
+        }
+        
+    }
 }
 
 module.exports = User;
