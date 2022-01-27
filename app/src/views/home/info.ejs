@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/home/info.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/js/home/info.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+  isData: <%= isDate %>
+    <div>
+        <h4><%= data.user%>님 안녕하세요</h4>
+        <p class="islogin"><a href="/logout">로그아웃</a></p>
+        
+    </div>
+
+    
+    <div class="table">
+        <div class="btn-group" role="group" aria-label="Third group">
+            <button class="btn btn-secondary" id="button">정보불러오기</button>
+        </div>
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">기본정보</th>
+                <th scope="col">내용</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">발주처</th>
+                <td><%= data.buyer %></td>
+              </tr>
+              <tr>
+                <th scope="row">전화</th>
+                <td><%= data.call %></td>
+              </tr>
+              <tr>
+                <th scope="row">팩스</th>
+                <td><%= data.fax %></td>
+              </tr>
+              <tr>
+                <th scope="row">메일</th>
+                <td><%= data.mail %></td>
+              </tr>
+              <tr>
+                <th scope="row">담당</th>
+                <td><%= data.head %></td>
+              </tr>
+              <tr id="dateTR">
+                <th scope="row" id="orderDate">발주일자</th>
+                <!-- <% if(isDate){ %> -->
+                <td><%= dateData.date %></td>
+                <!-- <% } %> -->
+              </tr>
+            </tbody>
+          </table>
+    </div>
+    
+
+</body>
+</html>

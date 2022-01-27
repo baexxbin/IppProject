@@ -26,6 +26,10 @@ class UserStorage {
             });
         });
     }
+
+    static async load(){
+        
+    }
 }
 
 module.exports = UserStorage;
