@@ -18,7 +18,7 @@ const output = {
     },
 
     register: (req,res) =>{
-        res.redirect("home/register");
+        res.render("home/register");
     },
 
     // 세션정보 res로 js에 넘겨주기
@@ -41,6 +41,14 @@ const output = {
         // }
         // res.render("home/info");
         // console.log(req.session.User);
+    },
+
+    logout : (req, res)=>{
+        if(req.session.user){
+            req.session.destroy();
+            res.clearCookie('loginData');
+            res.redirect("/login");
+        }
     }
 
 }
