@@ -47,10 +47,4 @@ function load(){
     .catch((err) =>{
         console.error("정보불러오기 중 에러 발생",err);
     });
-    
-
-    // fetch("/info").then((res)=> res.json())
-    // .then((res) => {
-    //     console.log(res);
-    // })
 }
